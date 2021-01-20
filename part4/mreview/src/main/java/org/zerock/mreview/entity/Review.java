@@ -16,6 +16,9 @@ public class Review extends BaseEntity{
     private Long reviewnum;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    private Movie movie;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     private Member member;
 
     private int grade;

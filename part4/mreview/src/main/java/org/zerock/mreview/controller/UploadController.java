@@ -127,6 +127,7 @@ public class UploadController {
 
         String srcFileName = null;
         try{
+            System.out.println(fileName);
             srcFileName = URLDecoder.decode(fileName,"UTF-8");
             File file = new File(uploadPath + File.separator+srcFileName);
             boolean result = file.delete();

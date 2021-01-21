@@ -63,7 +63,7 @@ public class MovieServiceImpl implements MovieService{
 
     @Override
     public MovieDTO getMovie(Long mno) {
-        List<Object[]> result = movieRepository.getMoviewithAll(mno);
+        List<Object[]> result = movieRepository.getMovieWithAll(mno);
         Movie movie = (Movie) result.get(0)[0];
 
         List<MovieImage> movieImageList = new ArrayList<>();
@@ -72,6 +72,7 @@ public class MovieServiceImpl implements MovieService{
             MovieImage movieImage = (MovieImage) arr[1];
             movieImageList.add(movieImage);
         });
+        System.out.println(result.get(0)[0] + " " + result.get(0)[1] + " " + result.get(0)[2] + " " + result.get(0)[3]);
         Double avg = (Double) result.get(0)[2]; // 평균 평점 - 모든 Row가 동일한 값
         Long reviewCnt = (Long) result.get(0)[3]; // 리뷰 개수 - 모든 Row가 동일한 값
 

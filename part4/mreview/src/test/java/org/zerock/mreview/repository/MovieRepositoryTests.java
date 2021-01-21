@@ -65,7 +65,7 @@ public class MovieRepositoryTests {
     @Test
     public void testGetMovieWithAll(){
 
-        List<Object[]> result = movieRepository.getMoviewithAll(94L);
+        List<Object[]> result = movieRepository.getMovieWithAll(94L);
 
         System.out.println(result);
 

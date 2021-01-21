@@ -22,18 +22,21 @@ public class MovieController {
 
     private final MovieService movieService;
 
-    @GetMapping({"/read","/register"})
-    public void register(long mno, @ModelAttribute("requestDTO") PageRequestDTO requestDTO, Model model){
+    @GetMapping("/register")
+    public void register(){
+
+    }
+    @GetMapping({"/read","/modify"})
+    public void read(long mno, @ModelAttribute("requestDTO") PageRequestDTO requestDTO, Model model){
         log.info("mno: "+ mno);
 
         MovieDTO movieDTO = movieService.getMovie(mno);
 
-        model.addAttribute("dto", movieDTO);
+        model.addAttribute("dto",movieDTO);
     }
 
     @PostMapping("/register")
     public String register(MovieDTO movieDTO, RedirectAttributes redirectAttributes){
-        System.out.println("here Asdsafasfasfasdf + " + movieDTO);
 
         Long mno = movieService.register(movieDTO);
 
